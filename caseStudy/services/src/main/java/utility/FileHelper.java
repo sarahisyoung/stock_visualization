@@ -2,8 +2,8 @@ package utility;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Event;
-import model.Team;
+import pojo.Company;
+import pojo.Stack;
 
 import java.io.File;
 import java.io.FileInputStream;

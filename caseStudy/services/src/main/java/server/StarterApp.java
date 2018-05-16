@@ -1,3 +1,4 @@
+package server;
 
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
@@ -56,7 +57,16 @@ public class StarterApp extends Application<Configuration> {
 
     @Override
     public void run(Configuration c, Environment e) throws Exception {
+
         LOGGER.info("Registering REST resources");
+        //e.jersey().register(new Example1Resource());
+
+//        e.jersey().register(new Example7Resource());
+//        e.jersey().register(new Example8Resource());
+//        e.jersey().register(new Example9Resource());
+//        e.jersey().register(new Example10Resource());
+//        e.jersey().register(new Example11Resource());
+//        e.jersey().register(new Example12Resource());
 
         LOGGER.info("Successfully started REST Service.");
     }

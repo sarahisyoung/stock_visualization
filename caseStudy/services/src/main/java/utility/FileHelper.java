@@ -3,7 +3,7 @@ package utility;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pojo.Company;
-import pojo.Stack;
+import pojo.Stock;
 
 import java.io.File;
 import java.io.FileInputStream;

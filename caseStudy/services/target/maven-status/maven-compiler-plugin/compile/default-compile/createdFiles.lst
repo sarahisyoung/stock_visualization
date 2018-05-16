@@ -1,0 +1,10 @@
+server/StarterApp.class
+utility/FileHelper$1.class
+utility/InputValidator.class
+server/Example1.class
+pojo/Company.class
+resources/CompanyResource.class
+utility/FileHelper$2.class
+pojo/Stock.class
+resources/StockResource.class
+utility/FileHelper.class

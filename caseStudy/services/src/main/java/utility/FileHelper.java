@@ -3,7 +3,7 @@ package utility;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pojo.Company;
-import pojo.Stack;
+import pojo.Stock;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -60,7 +60,7 @@ public class FileHelper {
 
 
 
-    public static Event readSingleEvent(String fileName) throws IOException {
+    /*public static Event readSingleEvent(String fileName) throws IOException {
 
         InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
 //        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
@@ -109,5 +109,5 @@ public class FileHelper {
     public static void writeEventsToFile(String fileName, List<Event> scheduledEvents) throws IOException {
         mapper.writerWithDefaultPrettyPrinter()
                 .writeValue(new File("data", fileName), scheduledEvents);
-    }
+    }*/
 }

@@ -16,12 +16,52 @@
 
 package resources;
 
+import pojo.Stock;
+import utility.FileHelper;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import static utility.FileHelper.DATEFORMAT;
+
 // TODO - add your @Path here
+@Path("events")
 public class StockResource {
 
     // TODO - Add a @GET resource to get stock data
     // Your service should return data based on 3 inputs
     // Stock ticker, start date and end date
-    
+
+
+
+    @GET
+    @Path("startDate/{startDate}/endDate/{endDate}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Stock> getEventsInRange(@PathParam("startDate") String startDateStr, @PathParam("endDate") String endDateStr) throws IOException, ParseException {
+        System.out.println(startDateStr);
+        System.out.println(23423);
+
+        List<Stock> events = FileHelper.readAllStocks("historicalStockData.json");
+        System.out.println(events.get(0).getName());
+        List<Stock> eventsInRange = new ArrayList<>();
+        /*for (Stock event: events) {
+            if ((event.getDate().before(endDate) || event.getDate().equals(endDate))
+                    && (event.getDate().after(startDate) || event.getDate().equals(startDate))) {
+                eventsInRange.add(event);
+            }
+        }*/
+        return eventsInRange;
+    }
+
+
+
 
 }

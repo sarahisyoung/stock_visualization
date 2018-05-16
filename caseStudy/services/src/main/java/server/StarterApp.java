@@ -6,6 +6,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import resources.StockResource;
 
 
 /**
@@ -60,6 +61,8 @@ public class StarterApp extends Application<Configuration> {
 
         LOGGER.info("Registering REST resources");
         e.jersey().register(new Example1());
+        e.jersey().register(new StockResource());
+
 
 //        e.jersey().register(new Example7Resource());
 //        e.jersey().register(new Example8Resource());

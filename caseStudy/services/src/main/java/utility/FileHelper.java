@@ -47,10 +47,9 @@ public class FileHelper {
 
     public static List<Stock> readAllStocks(String fileName) throws IOException {
 
-        InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
+        InputStream inputStream = new FileInputStream(("../../resources/data" + File.separatorChar + fileName));
 //        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
-        return mapper.readValue(inputStream, new TypeReference<List<Stock>>() {
-        });
+        return mapper.readValue(inputStream, new TypeReference<List<Stock>>() {});
     }
 
 

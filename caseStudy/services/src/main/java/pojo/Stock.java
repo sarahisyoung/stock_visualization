@@ -15,36 +15,37 @@
  */
 
 package pojo;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * This class will define a company's end-of-day stock price
  * Look at resources/data/historicalStockData.json
  */
 public class Stock {
 
-    String ticker;
-    HashMap<String, Double> dailyClose = new HashMap<String, Double>();
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="GMT-5")
+    private Date date;
+    @JsonProperty
+    private String name;
+    @JsonProperty
+    private List<HashMap<String,Double>> dailyClosePrice;
 
-    public Stock(String ticker) {
-        this.ticker = ticker;
+
+
+    public String getName() {
+        System.out.println("getname");
+        return name;
     }
 
-    public String getTicker() {
-        return ticker;
+    public Double getPrice(String date) {
+        System.out.println("getprice");
+        return dailyClosePrice.get(0).get(date);
     }
 
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
-    }
-
-    /*public double getPrice() {
-        return price;
-    }
-    
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    */
     // TODO - Think back to your modelling session
     // Define the attributes of a stock price based on the
     // provided data in resources/data

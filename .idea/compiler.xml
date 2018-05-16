@@ -10,8 +10,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="stock-visualization-app" target="1.5" />
       <module name="stock-visualization-app (1)" target="1.8" />
+=======
+      <module name="stock-visualization-app" target="1.8" />
+>>>>>>> master
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -59,7 +59,7 @@ public class StarterApp extends Application<Configuration> {
     public void run(Configuration c, Environment e) throws Exception {
 
         LOGGER.info("Registering REST resources");
-        //e.jersey().register(new Example1Resource());
+        e.jersey().register(new Example1());
 
 //        e.jersey().register(new Example7Resource());
 //        e.jersey().register(new Example8Resource());

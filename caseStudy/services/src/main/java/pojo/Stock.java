@@ -22,6 +22,29 @@ package pojo;
  */
 public class Stock {
 
+    String ticker;
+    HashMap<String, double> dailyClose = new HashMap<String, double>();
+
+    public Stock(String ticker) {
+        this.ticker = ticker;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+    
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     // TODO - Think back to your modelling session
     // Define the attributes of a stock price based on the
     // provided data in resources/data

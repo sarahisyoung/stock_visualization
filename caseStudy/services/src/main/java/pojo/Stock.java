@@ -15,7 +15,7 @@
  */
 
 package pojo;
-
+import java.util.HashMap;
 /**
  * This class will define a company's end-of-day stock price
  * Look at resources/data/historicalStockData.json
@@ -23,7 +23,7 @@ package pojo;
 public class Stock {
 
     String ticker;
-    HashMap<String, double> dailyClose = new HashMap<String, double>();
+    HashMap<String, Double> dailyClose = new HashMap<String, Double>();
 
     public Stock(String ticker) {
         this.ticker = ticker;
@@ -37,14 +37,14 @@ public class Stock {
         this.ticker = ticker;
     }
 
-    public double getPrice() {
+    /*public double getPrice() {
         return price;
     }
     
     public void setPrice(double price) {
         this.price = price;
     }
-
+    */
     // TODO - Think back to your modelling session
     // Define the attributes of a stock price based on the
     // provided data in resources/data

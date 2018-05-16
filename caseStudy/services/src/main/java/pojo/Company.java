@@ -25,63 +25,6 @@ public class Company {
     // TODO - Think back to your modelling session
     // Define the attributes of a Company based on the
     // provided data in resources/data
-    @JsonFormat
-    private String symbol;
-
-    @JsonProperty
-    private String name;
-
-    @JsonProperty
-    private String headquarterCity;
-
-    @JsonProperty
-    private String headquartersStateorCountry;
-
-    @JsonProperty
-    private int numberofEmployees;
-
-    @JsonProperty
-    private String sector;
-
-    @JsonProperty
-    private String industry;
-
-
-
-
-
-
-    public String getSymbol() {
-        return symbol;
-    }
-    public String getName() {
-        return name;
-    }
-    public String getHQCity() {
-        return headquarterCity;
-    }
-    public String getHQStateCountry() {
-        return headquartersStateorCountry;
-    }
-    public int getNumEmploy() {
-        return numberofEmployees;
-    }
-    public String getSector() {
-        return sector;
-    }
-    public String getIndustry() {
-        return industry;
-    }
-
-
-
-
-
 
     // TODO - add getter and setter methods for your attributes
-
-
-
-
-
 }

@@ -85,9 +85,11 @@ public class StarterApp extends Application<Configuration> {
     public static void main(String[] args) throws Exception {
 
         StarterApp restServer = new StarterApp();
+
         restServer.run(args);
 
         System.out.println("Go to localhost:8080/hello/ok in your browser.");
+
     }
 
 }

@@ -27,10 +27,9 @@
  */
 
 import React from 'react';
-//import DatePicker from 'react-datepicker'; UNCOMMENT this line if you are using the DatePicker component
+import DatePicker from 'react-datepicker'; 
 import moment from 'moment';
-
-//import 'react-datepicker/dist/react-datepicker.css'; UNCOMMENT this line if you are using the DatePicker component
+import 'react-datepicker/dist/react-datepicker.css'; 
 
 class Date extends React.Component {
     constructor (props) {
@@ -38,7 +37,7 @@ class Date extends React.Component {
         this.state = {
             date: moment()
         };
-
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -52,6 +51,8 @@ class Date extends React.Component {
          * to propagate the change to App component, which will handle it via its
          * own onChange prop.
          */
+        this.setState({date: date});
+        this.props.onChange(this.state.date);
     }
 
     render() {
@@ -65,9 +66,19 @@ class Date extends React.Component {
                      * This method should set the state to the date argument passed in the parameter.
                      *
                      */
+                    <DatePicker dateFormat="MM/DD/YYYY" selected={this.state.date} onChange={this.handleChange.bind(this)} />
                 }
-                <p><strong>{this.props.text}</strong></p>
+                {/* <p><strong>{this.props.text}</strong></p>
+                <p> {this.props.onChange}</p> */}
+
+                {/* <p> {this.state.date} </p> */}
                 <div className="date-input">
+                  { 
+                  //{props:date ? props.date.toString() : null}
+                  <p> {this.props.datevar} </p>
+                  
+                 }
+
 
                 </div>
             </div>
@@ -77,4 +88,4 @@ class Date extends React.Component {
 
 }
 
-// Don't forget to export your component!
+export default Date;

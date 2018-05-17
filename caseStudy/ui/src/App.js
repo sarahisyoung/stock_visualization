@@ -16,6 +16,10 @@
 
 import React from 'react';
 import './style/App.css';
+import Date from './components/Date';
+import TextInput from './components/TextInput';
+import LineChart from './components/LineChart';
+import Fake from './data/fake_data.json';
 
 /**
  * TODO:
@@ -35,7 +39,9 @@ class App extends React.Component{
 
     }
 
-
+    handleDateChange(date) {
+        this.setState({date: date});
+      }
 
 
 
@@ -51,23 +57,29 @@ class App extends React.Component{
                * These props methods should set state and help determine if the
                * highchart should be displayed by changing the state of that boolean.
                * Don't forget to bind these methods!
-               */}
-
+               */ 
+              <div className='date'>
+                <h5>Start Date   :  &nbsp;  &nbsp;  &nbsp;  &nbsp; </h5>
+                <Date selected={this.state.date} onChange={this.handleDateChange.bind(this)} />
+                {/* date={date.date}/> */}
+                <h5>End Date   :  &nbsp;  &nbsp;  &nbsp;  &nbsp; </h5>
+                <Date selected={this.state.date} onChange={this.handleDateChange.bind(this)}
+                datevar={this.state.date}/>
+              </div>
+              
+              }
+               
                 <div className="date-range">
+
 
                 </div>
               </div>
-
-
-                 {/**
-                   *  TODO
-                   *  Create a div element that shows a highchart when the ticker, start date, end date
-                   *  states ALL have values and nothing (null) otherwise. You will need to use a conditional here
-                   *  to help control rendering and pass these states as props to the component. This conditional can
-                   *  be maintained as a state object.
-                   *  http://reactpatterns.com/#conditional-rendering
-                   */}
-
+            <br />
+            <br />
+               <TextInput/>
+                <br />
+                <br />
+               <LineChart data= {Fake.data}/>
           </div>
       );
     }

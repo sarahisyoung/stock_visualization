@@ -18,8 +18,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './style/index.css';
+import StockTicker from './components/StockTicker';
+import CompInfo from './components/CompInfo';
+import TextInput from './components/TextInput';
 
 ReactDOM.render(
-  <App />,
+  <div>
+   
+   <App/>
+
+   </div>,
   document.getElementById('root')
 );

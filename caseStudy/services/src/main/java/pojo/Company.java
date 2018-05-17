@@ -36,13 +36,13 @@ public class Company {
     private String name;
 
     @JsonProperty
-    private String headquarterCity;
+    private String headquartersCity;
 
     @JsonProperty
-    private String headquartersStateorCountry;
+    private String headquartersStateOrCountry;
 
     @JsonProperty
-    private int numberofEmployees;
+    private int numberOfEmployees;
 
     @JsonProperty
     private String sector;
@@ -62,13 +62,13 @@ public class Company {
         return name;
     }
     public String getHQCity() {
-        return headquarterCity;
+        return headquartersCity;
     }
     public String getHQStateCountry() {
-        return headquartersStateorCountry;
+        return headquartersStateOrCountry;
     }
     public int getNumEmploy() {
-        return numberofEmployees;
+        return numberOfEmployees;
     }
     public String getSector() {
         return sector;

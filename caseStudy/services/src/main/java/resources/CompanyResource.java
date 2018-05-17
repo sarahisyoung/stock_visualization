@@ -45,31 +45,31 @@ public class CompanyResource {
 
     public void buildDataBase() throws IOException {
         //        building the map
+
+        System.out.println("building the map");
+
         List<Company> companies = FileHelper.readAllCompanies("companyInfo.json");
 
-            allcompanies = new HashMap<String, Company>();
+        allcompanies = new HashMap<String, Company>();
 
-            for (Company company : companies) {
-                if (!allcompanies.containsKey(company.getSymbol())) {
-                    allcompanies.put(company.getSymbol(), company);
-                }
+        for (Company company : companies) {
+            if (!allcompanies.containsKey(company.getSymbol())) {
+                allcompanies.put(company.getSymbol(), company);
             }
+        }
     }
+
 
     @GET
     @Path("allcompanies")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCompanies() throws IOException {
         List<Company> companies = FileHelper.readAllCompanies("companyInfo.json");
-
-        if (built == 0) {
-            buildDataBase();
-            built = 1;
-        }
-
-
-        return Response.ok(companies).build();
+        System.out.println("finished list");
+        return Response.ok().entity(companies.get(0).getName()).build();
     }
+
+
 
 
     // @GET
@@ -87,7 +87,7 @@ public class CompanyResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getOneCompanyBasicInfo(@PathParam("companysymb") String companysymb) throws IOException {
         if (built == 0) {
-            buildDataBase();
+            this.buildDataBase();
             built = 1;
         }
 
@@ -95,6 +95,7 @@ public class CompanyResource {
 
         if (allcompanies.containsKey(companysymb)) {
             thisCompany = allcompanies.get(companysymb);
+            System.out.println(thisCompany.getName());
 
         } else {
             String info = "No such company symbol";

@@ -18,6 +18,7 @@ package pojo;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -32,19 +33,45 @@ public class Stock {
     @JsonProperty
     private String name;
     @JsonProperty
-    private List<HashMap<String,Double>> dailyClosePrice;
+    private List<TreeMap<String,Double>> dailyClosePrice;
+    @JsonProperty
+    private List<String> dateSet;
+    @JsonProperty
+    private List<Double> priceSet;
+
 
 
 
     public String getName() {
-        System.out.println("getname");
         return name;
     }
 
     public Double getPrice(String date) {
-        System.out.println("getprice");
         return dailyClosePrice.get(0).get(date);
     }
+
+    public List<TreeMap<String,Double>> getDailyClosePrice() {
+        return dailyClosePrice;
+    }
+
+    public List<String> getDateSet() {
+        return dateSet;
+    }
+
+    public List<Double> getPriceSet() {
+        return priceSet;
+    }
+
+    public void setDateSet(List<String> dateSet) {
+        this.dateSet = dateSet;
+    }
+
+    public void setPriceSet(List<Double> priceSet) {
+        this.priceSet = priceSet;
+    }
+
+
+
 
     // TODO - Think back to your modelling session
     // Define the attributes of a stock price based on the
